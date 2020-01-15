@@ -1,0 +1,12 @@
+createDatabase.sh
+
+az group create -name "cloud.." --location eastus
+
+az sql server create \
+ --name "sqlservername" \
+ --resource-group "sqlresoucegroup" \
+ --admin-user "admin" \
+ --admin-password "password"
+ 
+ 
+az sql db create --resource-group "sqlresoucegroup" --server "sqlservername" --name "mycloudDB" \
